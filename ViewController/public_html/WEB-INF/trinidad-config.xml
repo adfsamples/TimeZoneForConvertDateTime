@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trinidad-config xmlns="http://myfaces.apache.org/trinidad/config">
+  <skin-family>Alta</skin-family>
+  <skin-version>v1</skin-version>
+  <time-zone>#{applicationBean.applicationTimeZone}</time-zone>
+</trinidad-config>

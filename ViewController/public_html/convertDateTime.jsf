@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="convertDateTime.jsf" id="d1">
+        <af:form id="f1">
+            <af:panelHeader id="ph1" text="ADF Samples - Time Zone for &lt;af:convertDateTime>"
+                            inlineStyle="margin:20px;" partialTriggers="soc_ap_tz soc_in_tz it_dt soc_out_tz">
+                <af:panelHeader text="Configuration" id="ph4">
+                    <af:panelFormLayout id="pfl2" labelWidth="180">
+                        <af:inputText id="it3" label="System Time Zone: " value="#{applicationBean.systemTimeZone.ID}"
+                                      disabled="true" contentStyle="width:240px;"/>
+                        <af:selectOneChoice id="soc_ap_tz" label="Application Time Zone: "
+                                            value="#{applicationBean.applicationTimeZoneId}" autoSubmit="true"
+                                            contentStyle="width:240px;">
+                            <f:selectItems id="si1" value="#{applicationBean.timeZones}"/>
+                        </af:selectOneChoice>
+                    </af:panelFormLayout>
+                </af:panelHeader>
+                <af:panelHeader id="ph2" text="Input">
+                    <af:panelFormLayout id="pfl1" labelWidth="180">
+                        <af:selectOneChoice id="soc_in_tz" label="User Time Zone for Input: "
+                                            value="#{userBean.inputTimeZoneId}" autoSubmit="true"
+                                            contentStyle="width:240px;">
+                            <f:selectItems id="si6" value="#{userBean.timeZones}"/>
+                        </af:selectOneChoice>
+                        <af:inputText id="it_dt" label="Date Time: " value="#{userBean.dateTime}" autoSubmit="true"
+                                      contentStyle="width:240px;">
+                            <af:convertDateTime pattern="yyyy-MM-dd HH:mm" timeZone="#{userBean.inputTimeZone}"/>
+                        </af:inputText>
+                    </af:panelFormLayout>
+                </af:panelHeader>
+                <af:panelHeader id="ph3" text="Output">
+                    <af:panelFormLayout id="pfl3" labelWidth="180">
+                        <af:selectOneChoice id="soc_out_tz" label="User Time Zone for Output: "
+                                            value="#{userBean.outputTimeZoneId}" autoSubmit="true"
+                                            contentStyle="width:240px;">
+                            <f:selectItems value="#{userBean.timeZones}" id="si2"/>
+                        </af:selectOneChoice>
+                        <af:inputText id="ot1" label="Date Time: " value="#{userBean.dateTime}" disabled="true"
+                                      contentStyle="width:240px;">
+                            <af:convertDateTime pattern="yyyy-MM-dd HH:mm" timeZone="#{userBean.outputTimeZone}"/>
+                        </af:inputText>
+                    </af:panelFormLayout>
+                </af:panelHeader>
+            </af:panelHeader>
+        </af:form>
+    </af:document>
+</f:view>
