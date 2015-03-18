@@ -6,7 +6,7 @@
             <af:panelHeader id="ph1" text="ADF Samples - Time Zone for &lt;af:convertDateTime>"
                             inlineStyle="margin:20px;" partialTriggers="soc_ap_tz soc_in_tz it_dt soc_out_tz">
                 <af:panelHeader text="Configuration" id="ph4">
-                    <af:panelFormLayout id="pfl2" labelWidth="180">
+                    <af:panelFormLayout id="pfl2" labelWidth="200">
                         <af:inputText id="it3" label="System Time Zone: " value="#{applicationBean.systemTimeZone.ID}"
                                       disabled="true" contentStyle="width:240px;"/>
                         <af:selectOneChoice id="soc_ap_tz" label="Application Time Zone: "
@@ -17,8 +17,8 @@
                     </af:panelFormLayout>
                 </af:panelHeader>
                 <af:panelHeader id="ph2" text="Input">
-                    <af:panelFormLayout id="pfl1" labelWidth="180">
-                        <af:selectOneChoice id="soc_in_tz" label="User Time Zone for Input: "
+                    <af:panelFormLayout id="pfl1" labelWidth="200">
+                        <af:selectOneChoice id="soc_in_tz" label="Converter-level Time Zone: "
                                             value="#{userBean.inputTimeZoneId}" autoSubmit="true"
                                             contentStyle="width:240px;">
                             <f:selectItems id="si6" value="#{userBean.timeZones}"/>
@@ -30,8 +30,8 @@
                     </af:panelFormLayout>
                 </af:panelHeader>
                 <af:panelHeader id="ph3" text="Output">
-                    <af:panelFormLayout id="pfl3" labelWidth="180">
-                        <af:selectOneChoice id="soc_out_tz" label="User Time Zone for Output: "
+                    <af:panelFormLayout id="pfl3" labelWidth="200">
+                        <af:selectOneChoice id="soc_out_tz" label="Converter-level Time Zone: "
                                             value="#{userBean.outputTimeZoneId}" autoSubmit="true"
                                             contentStyle="width:240px;">
                             <f:selectItems value="#{userBean.timeZones}" id="si2"/>
